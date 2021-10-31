@@ -32,7 +32,7 @@
 
 6. 但基本不期望上面这个命令来启动APP，所以还是进入Android Studio，等待自动处理完依赖，然后确认连接到模拟器之后，点击运行即可在模拟器中看到启动的APP 
 
-[![CrdtOo.png](https://www.helloimg.com/images/2021/10/31/CrdtOo.png)](https://www.helloimg.com/image/CrdtOo  =40x30)
+<a href="https://www.helloimg.com/image/CrdtOo"><img src="https://www.helloimg.com/images/2021/10/31/CrdtOo.png" alt="CrdtOo.png" border="0" width="30%" height="30%"/></a>
 
 7. 修改项目之后如何重新编译并生成APP
 
