@@ -2,11 +2,11 @@
 
 1. 拉取项目代码到本地后，进入项目根目录运行命令npm install
 
-![img](file:///C:\Users\A\AppData\Local\Temp\ksohtml\wpsC299.tmp.jpg) 
+[![Crd1ah.png](https://www.helloimg.com/images/2021/10/31/Crd1ah.png)](https://www.helloimg.com/image/Crd1ah) 
 
 2. 运行 npm start：可以用浏览器查看APP效果
 
-![img](file:///C:\Users\A\AppData\Local\Temp\ksohtml\wpsC29A.tmp.jpg) 
+[![CrdqGr.png](https://www.helloimg.com/images/2021/10/31/CrdqGr.png)](https://www.helloimg.com/image/CrdqGr) 
 
 3. 启动安卓模拟器和Android Studio
 
@@ -20,25 +20,19 @@
 
 运行命令 adb.exe connect 127.0.0.1:62001
 
-![img](file:///C:\Users\A\AppData\Local\Temp\ksohtml\wpsC29B.tmp.jpg) 
+[![CrdJjK.png](https://www.helloimg.com/images/2021/10/31/CrdJjK.png)](https://www.helloimg.com/image/CrdJjK)
 
  
 
 5. 运行 weex run android
 
-![img](file:///C:\Users\A\AppData\Local\Temp\ksohtml\wpsC29C.tmp.jpg) 
+[![CrdsEb.png](https://www.helloimg.com/images/2021/10/31/CrdsEb.png)](https://www.helloimg.com/image/CrdsEb) 
 
  
 
-6. 但基本不期望上面这个命令来启动APP，所以还是进入Android Studio，等待自动处理完依赖，然后确认连接到模拟器之后，点击运行即可在模拟器中看到启动的APP
+6. 但基本不期望上面这个命令来启动APP，所以还是进入Android Studio，等待自动处理完依赖，然后确认连接到模拟器之后，点击运行即可在模拟器中看到启动的APP 
 
-![img](file:///C:\Users\A\AppData\Local\Temp\ksohtml\wpsC29D.tmp.jpg) 
-
-模拟器中：![img](file:///C:\Users\A\AppData\Local\Temp\ksohtml\wpsC29E.tmp.jpg)
-
- 
-
-![img](file:///C:\Users\A\AppData\Local\Temp\ksohtml\wpsC29F.tmp.jpg) 
+[![CrdtOo.png](https://www.helloimg.com/images/2021/10/31/CrdtOo.png)](https://www.helloimg.com/image/CrdtOo)
 
 7. 修改项目之后如何重新编译并生成APP
 
@@ -46,7 +40,7 @@
 
  
 
-提示：甚至你都不需要等待weex run andorid完全执行完毕，大概在这两步![img](file:///C:\Users\A\AppData\Local\Temp\ksohtml\wpsC2A0.tmp.jpg)结束之后，就可以重新运行AndroidStudio生成APP了
+提示：甚至你都不需要等待weex run andorid完全执行完毕，大概在这两步[![Crd4kD.png](https://www.helloimg.com/images/2021/10/31/Crd4kD.png)](https://www.helloimg.com/image/Crd4kD)结束之后，就可以重新运行AndroidStudio生成APP了
 
  
 
@@ -62,17 +56,17 @@
 
  
 
-![img](file:///C:\Users\A\AppData\Local\Temp\ksohtml\wpsC2A1.tmp.png)![img](file:///C:\Users\A\AppData\Local\Temp\ksohtml\wpsC2A2.tmp.png) ![img](file:///C:\Users\A\AppData\Local\Temp\ksohtml\wpsC2A3.tmp.png)![img](file:///C:\Users\A\AppData\Local\Temp\ksohtml\wpsC2A4.tmp.jpg)![img](file:///C:\Users\A\AppData\Local\Temp\ksohtml\wpsC2A5.tmp.png)
+[<img src="https://www.helloimg.com/images/2021/10/31/CrdL1S.png" alt="CrdL1S.png" style="zoom:25%;" />](https://www.helloimg.com/image/CrdL1S)[<img src="https://www.helloimg.com/images/2021/10/31/CrdSlC.png" alt="CrdSlC.png" style="zoom:25%;" />](https://www.helloimg.com/image/CrdSlC) [<img src="https://www.helloimg.com/images/2021/10/31/CrdHRt.png" alt="CrdHRt.png" style="zoom:25%;" />](https://www.helloimg.com/image/CrdHRt)[<img src="https://www.helloimg.com/images/2021/10/31/Crdv6P.png" alt="Crdv6P.png" style="zoom:25%;" />](https://www.helloimg.com/image/Crdv6P)[<img src="https://www.helloimg.com/images/2021/10/31/Crd0R6.png" alt="Crd0R6.png" style="zoom:25%;" />](https://www.helloimg.com/image/Crd0R6)
 
  
 
 2. 支持转账、资源管理、权限管理等操作
 
-![img](file:///C:\Users\A\AppData\Local\Temp\ksohtml\wpsC2A6.tmp.png)<img src="file:///D:\QQ\Document\986472954\Image\C2C\B5A0D4443D5C76ADD6D97B6B4106F85A.jpg" alt="img" style="zoom:25%;" /><img src="file:///D:\QQ\Document\986472954\Image\C2C\DE3D915420E091064C64E2E74085A527.jpg" alt="img" style="zoom:25%;" /><img src="file:///D:\QQ\Document\986472954\Image\C2C\EF8A54D4E095B43E20B7A642FAFA3ACB.jpg" alt="img" style="zoom:25%;" />
+[![CrdNLn.png](https://www.helloimg.com/images/2021/10/31/CrdNLn.png)](https://www.helloimg.com/image/CrdNLn)
 
 3. 支持Dapp，你可以从地址栏访问dapp，并且将保存你访问过的dapp的历史记录
 
-   <img src="file:///D:\QQ\Document\986472954\Image\C2C\F39B4ECA15B6D621F1AA57FB354C2AF4.jpg" alt="img" style="zoom:25%;" /><img src="file:///D:\QQ\Document\986472954\Image\C2C\13387F24D5680786202AB0B53126CAF5.jpg" alt="img" style="zoom:25%;" />
+   [![CrdQQR.png](https://www.helloimg.com/images/2021/10/31/CrdQQR.png)](https://www.helloimg.com/image/CrdQQR)
 
    
 
