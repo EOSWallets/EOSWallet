@@ -32,7 +32,7 @@
 
 6. 但基本不期望上面这个命令来启动APP，所以还是进入Android Studio，等待自动处理完依赖，然后确认连接到模拟器之后，点击运行即可在模拟器中看到启动的APP 
 
-<a href="https://www.helloimg.com/image/CrdtOo"><img src="https://www.helloimg.com/images/2021/10/31/CrdtOo.png" alt="CrdtOo.png" border="0" width="30%" height="30%"/></a>
+<a href="https://www.helloimg.com/image/CrdtOo"><img src="https://www.helloimg.com/images/2021/10/31/CrdtOo.png" alt="CrdtOo.png" border="0" width="50%" height="50%"/></a>
 
 7. 修改项目之后如何重新编译并生成APP
 
@@ -40,7 +40,7 @@
 
  
 
-提示：甚至你都不需要等待weex run andorid完全执行完毕，大概在这两步[![Crd4kD.png](https://www.helloimg.com/images/2021/10/31/Crd4kD.png)](https://www.helloimg.com/image/Crd4kD)结束之后，就可以重新运行AndroidStudio生成APP了
+提示：甚至你都不需要等待weex run andorid完全执行完毕，大概在这两步<a href="https://www.helloimg.com/image/Crd4kD"><img src="https://www.helloimg.com/images/2021/10/31/Crd4kD.png" alt="Crd4kD.png" border="0" width="50%" height="50%"/></a>结束之后，就可以重新运行AndroidStudio生成APP了
 
  
 
@@ -56,13 +56,13 @@
 
  
 
-[<img src="https://www.helloimg.com/images/2021/10/31/CrdL1S.png" alt="CrdL1S.png" style="zoom:25%;" />](https://www.helloimg.com/image/CrdL1S)[<img src="https://www.helloimg.com/images/2021/10/31/CrdSlC.png" alt="CrdSlC.png" style="zoom:25%;" />](https://www.helloimg.com/image/CrdSlC) [<img src="https://www.helloimg.com/images/2021/10/31/CrdHRt.png" alt="CrdHRt.png" style="zoom:25%;" />](https://www.helloimg.com/image/CrdHRt)[<img src="https://www.helloimg.com/images/2021/10/31/Crdv6P.png" alt="Crdv6P.png" style="zoom:25%;" />](https://www.helloimg.com/image/Crdv6P)[<img src="https://www.helloimg.com/images/2021/10/31/Crd0R6.png" alt="Crd0R6.png" style="zoom:25%;" />](https://www.helloimg.com/image/Crd0R6)
+<a href="https://www.helloimg.com/image/CrdL1S"><img src="https://www.helloimg.com/images/2021/10/31/CrdL1S.png" alt="CrdL1S.png" border="0" width="50%" height="50%"  /></a><a href="https://www.helloimg.com/image/CrdSlC"><img src="https://www.helloimg.com/images/2021/10/31/CrdSlC.png" alt="CrdSlC.png" border="0" width="50%" height="50%" /></a> <a href="https://www.helloimg.com/image/CrdHRt"><img src="https://www.helloimg.com/images/2021/10/31/CrdHRt.png" alt="CrdHRt.png" border="0" width="50%" height="50%"/></a><a href="https://www.helloimg.com/image/Crdv6P"><img src="https://www.helloimg.com/images/2021/10/31/Crdv6P.png" alt="Crdv6P.png" border="0" width="50%" height="50%"/></a><a href="https://www.helloimg.com/image/Crd0R6"><img src="https://www.helloimg.com/images/2021/10/31/Crd0R6.png" alt="Crd0R6.png" border="0" width="50%" height="50%"/></a>
 
  
 
 2. 支持转账、资源管理、权限管理等操作
 
-   [![CrdNLn.png](https://www.helloimg.com/images/2021/10/31/CrdNLn.png)](https://www.helloimg.com/image/CrdNLn)
+   <a href="https://www.helloimg.com/image/CrdNLn"><img src="https://www.helloimg.com/images/2021/10/31/CrdNLn.png" alt="CrdNLn.png" border="0" /></a>
 
 3. 支持Dapp，你可以从地址栏访问dapp，并且将保存你访问过的dapp的历史记录
 
