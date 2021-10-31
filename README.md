@@ -32,7 +32,7 @@
 
 6. 但基本不期望上面这个命令来启动APP，所以还是进入Android Studio，等待自动处理完依赖，然后确认连接到模拟器之后，点击运行即可在模拟器中看到启动的APP 
 
-[![CrdtOo.png](https://www.helloimg.com/images/2021/10/31/CrdtOo.png)](https://www.helloimg.com/image/CrdtOo)
+[![CrdtOo.png](https://www.helloimg.com/images/2021/10/31/CrdtOo.png)](https://www.helloimg.com/image/CrdtOo  =40x30)
 
 7. 修改项目之后如何重新编译并生成APP
 
@@ -62,7 +62,7 @@
 
 2. 支持转账、资源管理、权限管理等操作
 
-[![CrdNLn.png](https://www.helloimg.com/images/2021/10/31/CrdNLn.png)](https://www.helloimg.com/image/CrdNLn)
+   [![CrdNLn.png](https://www.helloimg.com/images/2021/10/31/CrdNLn.png)](https://www.helloimg.com/image/CrdNLn)
 
 3. 支持Dapp，你可以从地址栏访问dapp，并且将保存你访问过的dapp的历史记录
 
