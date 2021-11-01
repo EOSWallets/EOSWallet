@@ -212,10 +212,12 @@ export default {
             type:'json'
         }, function(ret) {
             if(!ret.ok){
-            modal.toast({
-                message: '网络错误',
-                duration: 3
-            });
+            // modal.toast({
+            //     message: '网络错误',
+            //     duration: 3
+            // });
+            
+                    console.log("网络错误")
             }else{
                let datas = ret.data.data
                console.log("获取到服务器提供的nodes")
@@ -287,10 +289,11 @@ export default {
         let requestUrl = api+'/v1/admin_api/token_chain/find?page=1&limit=10&symbol='+this.chainName
         let data = await requestV2('get',requestUrl,'')
         if(!data) {
-            modal.toast({
-                message: '网络错误',
-                duration: 3
-            });
+            // modal.toast({
+            //     message: '网络错误',
+            //     duration: 3
+            // });
+                    console.log("网络错误")
         }else{
             console.log("获取到data")
             console.log(data.data)

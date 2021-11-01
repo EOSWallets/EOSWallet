@@ -78,3 +78,4 @@ typings/
 
 .temp/
 dist/
+platforms/android/bundlejs/

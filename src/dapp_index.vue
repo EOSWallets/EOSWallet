@@ -336,11 +336,11 @@ export default {
 
         currentIndex:0,
         autoPlay: false,
+        //顶部轮播图地址数组
         imgList: [
-          "http://jinvovo.com/ueditor/php/upload/image/20180518/1526623362581956.jpg",
-          "http://5b0988e595225.cdn.sohucs.com/images/20180404/03513c9553db49fab7a6a88f35f46702.jpeg",
-          "http://img.aiimg.com/uploads/userup/1307/231539221627.jpg",
-          "http://p3.img.botbrain.ai/part5/1137559/1533201831852.jpg"
+          "https://dappimg.com/media/image/banner/eea78af2c9f449e5bb1f126bc9ae287c.png",
+          "https://dappimg.com/media/image/banner/5959422485504eaebeaa1fd1f6cbd534.png",
+          "https://dappimg.com/media/image/article/b69586ac-9e87-4b77-9e4d-a35cfd7a0a8d.jpg"
         ],
         isMy: false,
         isRec: false,
@@ -367,6 +367,84 @@ export default {
           let myDapps = JSON.parse(my)
           this.myDapps = myDapps.slice(0,5)
         }
+        //模拟数据
+        this.myDapps = [
+          {
+            dapp_name_eng:"bloks",
+            dapp_name_chn:"bloks",
+            url:"https://bloks.io/",
+            img_src: "https://www.helloimg.com/images/2021/11/01/CV1BuX.png"
+          },
+          {
+            dapp_name_eng:"PIZZA",
+            dapp_name_chn:"PIZZA",
+            url:"https://pizza.finance/",
+            img_src: "https://www.helloimg.com/images/2021/11/01/CV1F16.jpg"
+          }
+        ]
+        this.recomDapps = [
+          {
+            dapp_name_eng:"bloks",
+            dapp_name_chn:"bloks",
+            url:"https://bloks.io/",
+            img_src: "https://www.helloimg.com/images/2021/11/01/CV1BuX.png"
+          },
+          {
+            dapp_name_eng:"Oranix",
+            dapp_name_chn:"Oranix",
+            url:"https://www.ogx.network/dapp",
+            img_src: "https://www.helloimg.com/images/2021/11/01/CV1ZrP.png"
+          },
+          {
+            dapp_name_eng:"Defibox",
+            dapp_name_chn:"Defibox",
+            url:"http://dapp.defibox.io",
+            img_src: "https://www.helloimg.com/images/2021/11/01/CV1ROM.jpg"
+          },
+          {
+            dapp_name_eng:"PIZZA",
+            dapp_name_chn:"PIZZA",
+            url:"https://pizza.finance/",
+            img_src: "https://www.helloimg.com/images/2021/11/01/CV1F16.jpg"
+          },
+          {
+            dapp_name_eng:"Newdex",
+            dapp_name_chn:"Newdex",
+            url:"https://newdex.io/",
+            img_src: "https://www.helloimg.com/images/2021/11/01/CV1Pln.jpg"
+          },
+          {
+            dapp_name_eng:"WhaleEx",
+            dapp_name_chn:"WhaleEx",
+            url:"https://www.whaleex.com/",
+            img_src: "https://www.helloimg.com/images/2021/11/01/CV1a6R.jpg"
+          },
+          {
+            dapp_name_eng:"DFS Network",
+            dapp_name_chn:"DFS Network",
+            url:"https://defis.network/",
+            img_src: "https://www.helloimg.com/images/2021/11/01/CV13Rz.png"
+          },
+          {
+            dapp_name_eng:"SportBet",
+            dapp_name_chn:"SportBet",
+            url:"https://sportbet.one/",
+            img_src: "https://www.helloimg.com/images/2021/11/01/CV1XLA.jpg"
+          },
+          {
+            dapp_name_eng:"Blockchain Cuties",
+            dapp_name_chn:"Blockchain Cuties",
+            url:"https://blockchaincuties.com/",
+            img_src: "https://www.helloimg.com/images/2021/11/01/CV1eQ5.jpg"
+          },
+          {
+            dapp_name_eng:"BetHash",
+            dapp_name_chn:"BetHash",
+            url:"http://bethash.net/?ref=eosbetadmin1",
+            img_src: "https://www.helloimg.com/images/2021/11/01/CV1EJm.jpg"
+          }
+        ]
+        
 
     },
   async created() {
@@ -641,10 +719,12 @@ export default {
             type:'json'
         }, function(ret) {
             if(!ret.ok){
-            modal.toast({
-                message: '网络错误',
-                duration: 3
-            });
+            // modal.toast({
+            //     message: '网络错误',
+            //     duration: 3
+            // });
+            
+                    console.log("网络错误")
             }else{
                let datas = ret.data.data
                console.log("获取到推荐dapps")
@@ -673,10 +753,11 @@ export default {
             type:'json'
         }, function(ret) {
             if(!ret.ok){
-            modal.toast({
-                message: '网络错误',
-                duration: 3
-            });
+            // modal.toast({
+            //     message: '网络错误',
+            //     duration: 3
+            // });
+                    console.log("网络错误")
             }else{
                let datas = ret.data.data
                console.log("获取到Dapp列表1")

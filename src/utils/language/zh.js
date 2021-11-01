@@ -5,8 +5,8 @@ export const zhLan = {
 		resourcemanage:"资源管理",
 		asset:"资产",
 		querying:"0",
-		total_asset:"总资产测试222",
-		receive: "收款测试",
+		total_asset:"总资产",
+		receive: "收款",
 		resources: "资源",
 		transfer: "转账",
 		wallet_list: "钱包列表"
