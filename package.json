@@ -20,7 +20,8 @@
     "android": "weex run android",
     "pack:ios": "npm run clean:ios && weex build ios",
     "pack:android": "npm run clean:android && weex build android",
-    "pack:web": "npm run clean:web && npm run build:prod:web"
+    "pack:web": "npm run clean:web && npm run build:prod:web",
+    "postinstall": "patch-package"
   },
   "keywords": [
     "weex"
@@ -35,6 +36,7 @@
     "js-md5": "^0.7.3",
     "moment": "^2.27.0",
     "node-fetch": "^2.6.0",
+    "patch-package": "^6.4.7",
     "phantom-limb": "0.0.1",
     "qrcode": "^1.4.4",
     "react-native-crypto": "^2.2.0",

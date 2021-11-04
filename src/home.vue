@@ -5,6 +5,36 @@
 		 	<wxc-loading :show="isShow" type="default"></wxc-loading>
 		 	<wxc-part-loading :show="isShow"></wxc-part-loading>
 		 </div> -->
+		<div v-if="isShow" :style="liststyle" class="wite">
+			<image :src="`${imgSrc}title`" style="width: 750px; height: 400px;"></image>
+			
+			<div>
+				<div class="no-data-title-box"><text class="no-data-title">{{zhLan.no_title}}</text></div>
+				<div>
+					<div class="no-data-box" @click="jump('private_key_import.js')">
+						<div  class="no-data-image"><image :src="`${imgSrc}noi`" style="height: 50px;width: 50px"></image></div>
+						<div class="no-datas no-data-border">
+							<div>
+								<div style="margin-bottom: 8px;"><text class="big">{{zhLan.have_wallet}}</text></div>
+								<div><text class="small">{{zhLan.import_wallet}}</text></div>
+							</div>
+							<image :src="`${imgSrc}right_gray`"  style="height: 30px;width: 30px"></image>
+						</div>
+						
+					</div>
+					<div  class="no-data-box"  @click="jump('create_account.js')">
+						<div  class="no-data-image"><image :src="`${imgSrc}noa`" style="height: 50px;width: 50px"></image></image></div>
+						<div  class="no-datas">
+							<div class="no-data-item">
+								<div style="margin-bottom: 8px;"><text class="big">{{zhLan.no_wallet}}</text></div>
+								<div><text class="small">{{zhLan.create_wallet}}</text></div>
+							</div>
+							<div><image :src="`${imgSrc}right_gray`" style="height: 30px;width: 30px"></image></div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
 		<div v-if="!isShow">
 			<div class="navigator">
 				<div @click="showWalletList" style="height: 70px;width: 305px;" class="account-top-left">
@@ -73,7 +103,7 @@
 		<wxc-popup :show="isWalletListShow" @wxcPopupOverlayClicked="closeWalletList" pos="bottom" popup-color="rgb(255,255,255)"
 		 style="background-color:#fff;z-index: 999;" height="750">
 			<div class="wallet_list_top">
-				<image :src="`${imgSrc}system`" style="height: 40px;width: 40px" @click="goAccount"></image>
+				<image :src="`${imgSrc}wal`" style="height: 40px;width: 40px" @click="goAccount"></image>
 				<text style="font-size: 36px; color: #1E90FF; line-height: 90px;" @click="testa">{{zhLan.wallet_list}}</text>
 				<image :src="`${imgSrc}close`" style="height: 40px;width: 40px" @click="closeWalletList"></image>
 			</div>
@@ -123,6 +153,72 @@
 		opacity: 1;
 	}
 
+	.wite {
+		background-color: #fff;
+		width: 750px;
+	}
+	.no-data-title-box {
+		width: 750px;
+		font-size: 40px;
+		color: #3c3c3c;
+		font-weight: bold;
+		padding-right: 30px;
+		padding-left: 30px;
+		margin-bottom: 50px;
+	}
+	.no-data-title {
+
+		font-size: 40px;
+		color: #3c3c3c;
+		font-weight: bold;
+	}
+	.no-data-box {
+		width: 750px;
+
+		justify-content: flex-start;
+		flex-direction: row;
+		padding-right: 30px;
+		padding-left: 30px;
+		background-color: #fff;
+		position: relative;
+		height: 120px;
+	}
+
+	.no-data-image {
+		height: 120px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		margin-right: 30px;
+		width: 50px;
+	}
+
+	.no-datas {
+		width: 610px;
+		height: 120px;
+		/* background-color: red; */
+		flex-direction: row;
+		justify-content: space-between;
+		align-items: center;
+
+	}
+
+	
+
+	.no-data-border {
+		border-bottom-width: 1px;
+		border-bottom-color: #C0C0C0;
+		border-bottom-style: solid;
+	}
+
+	.big {
+		font-size: 32px;
+		color: #3c3c3c;
+	}
+	.small {
+		font-size: 24px;
+		color: #C0C0C0;
+	}
 	.navigator {
 		/* border-bottom-width: 1px; */
 		/* border-bottom-color: #C0C0C0;
@@ -480,7 +576,8 @@
 				},		
 				clickTip:"",
 				chooWallet:[],
-				totalAsset: 0
+				totalAsset: 0,
+				liststyle: {}
 			}
 		},
 		beforeCreate() {
@@ -509,10 +606,10 @@
 			this.currentChain = chain.CurrentChain
 			console.log("[0818] account: ", account.account_name)
 			if(! account.account_name){
-				modal.toast({
-					'message': '请先导入账号',
-					'duration': 2
-				});
+				// modal.toast({
+				// 	'message': '请先导入账号',
+				// 	'duration': 2
+				// });
 			}else{
 				let assets = await getAssets(account.account_name, chain.CurrentChain);
 				console.log("获取到assets")
@@ -559,6 +656,7 @@
 			
 		},
 		async mounted() {
+			console.log("开始返回")
 			const lanSet = new BroadcastChannel('refresh')
 			const lanSet_account = new BroadcastChannel('account_home')
 			let that = this
@@ -572,6 +670,84 @@
 				
 				that.zhLan = await that.globalLan.lang("home", lan)
 
+
+			}
+
+			const lanSet1 = new BroadcastChannel('account_refresh')
+			lanSet1.onmessage = async function (event) {
+				console.log("获取到返回信息1")
+				that.account = JSON.parse(await getStorage("Account"));
+				console.log("独有this.account: ", JSON.stringify(that.account))
+				if(!that.account.account_name){
+					that.clickTip = "点击切换账号"
+				}
+
+				
+				if (that.account.account_name) {
+					let chain = JSON.parse(await getStorage("ChainManager"));
+					that.currentAccount = await getCurrentAccountInfo(that.account.account_name, chain.CurrentChain)
+					that.currentWallet = chain.CurrentChain;
+					that.currentChain = chain.CurrentChain
+					that.clickTip = ""
+					console.log("[0813]currentAccount: ", that.currentAccount)
+					that.isShow = false
+				} else {
+					// modal.toast({
+					// 	'message': '请先导入账号',
+					// 	'duration': 2
+					// });
+					that.isShow = true
+				}
+
+				let flag = true;
+				let assets = await getAssets(that.account.account_name, that.currentChain);
+				console.log("获取到assets",assets)
+				that.assetList = assets
+				console.log("现在的资产列表",that.assetList)
+				let total = 0
+				for (let i = 0; i < assets.length; i++) {
+					if(assets[i].unitPrice && assets[i].balance) {
+						total += assets[i].unitPrice * assets[i].balance
+					}
+				}
+				that.totalAsset = Math.floor(total*100) /100
+				that.getAssetsBalance()
+				storage.getItem("AccountManager_v2", res => {
+					if (flag) { //getItem这里会执行两边，不知为何，所以做了个限制
+						flag = false;
+					} else {
+						return
+					}
+					that.walletList = [];
+					let AccountManager = JSON.parse(res.data);
+					//循环公链
+					that.chainList.forEach(chainName => {
+						console.log("chainName: ", chainName)
+						//循环公钥
+						let accountArray = []
+						AccountManager[chainName].forEach(PubKeyItem => {
+							//循环账号
+							PubKeyItem.Accounts.forEach(accountItem => {
+								console.log("account: ", accountItem.Account)
+								that.walletList.push({
+									chain:chainName,
+									account_name: accountItem.Account,
+									pubkey: PubKeyItem.PublicKey
+								})
+
+							})
+						})
+					});
+					console.log("[0820] 账号列表刷新结束 list: ", JSON.stringify(that.walletList))
+				})
+				//初始化公链对象
+				initChain();
+				//初始化资产列表
+				initDbAssets();
+				//获取账号余额
+				that.getAssetsBalance()			
+				//选中当前账号
+				that.initCurrentAccount()
 
 			}
 
@@ -638,11 +814,13 @@
 				this.currentWallet = chain.CurrentChain;
 				this.clickTip = ""
 				console.log("[0813]currentAccount: ", this.currentAccount)
+				this.isShow = false
 			} else {
-				modal.toast({
-					'message': '请先导入账号',
-					'duration': 2
-				});
+				// modal.toast({
+				// 	'message': '请先导入账号',
+				// 	'duration': 2
+				// });
+				this.isShow = true
 			}
 
 			//初始化公链对象
@@ -868,6 +1046,14 @@
 				storage.setItem("authority",  JSON.stringify(data))
 				navigator.push({
 					url: utils.getUrl('authority.js'),
+					animated: "true"
+					}, event => {
+					console.log('callback: ', event)
+				})
+			},
+			jump(name) {
+				navigator.push({
+					url: utils.getUrl(name),
 					animated: "true"
 					}, event => {
 					console.log('callback: ', event)

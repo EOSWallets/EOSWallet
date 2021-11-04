@@ -1,0 +1,22 @@
+diff --git a/node_modules/brorand/index.js b/node_modules/brorand/index.js
+index 9a0fff4..4f939c2 100644
+--- a/node_modules/brorand/index.js
++++ b/node_modules/brorand/index.js
+@@ -18,13 +18,14 @@ Rand.prototype.generate = function generate(len) {
+ 
+ // Emulate crypto API using randy
+ Rand.prototype._rand = function _rand(n) {
+-  if (this.rand.getBytes)
+-    return this.rand.getBytes(n);
++  // if (this.rand.getBytes)
++  //   return this.rand.getBytes(n);
+ 
+   var res = new Uint8Array(n);
+   for (var i = 0; i < res.length; i++)
+-    res[i] = this.rand.getByte();
++    res[i] = Math.floor(Math.random() * 256);
+   return res;
++   
+ };
+ 
+ if (typeof self === 'object') {

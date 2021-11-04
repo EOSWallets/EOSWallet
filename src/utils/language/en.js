@@ -9,7 +9,12 @@ export const zhLan = {
 		receive: "Receive",
 		resources: "Resources",
 		transfer: "Transfer",
-		wallet_list: "Wallets"
+		wallet_list: "Wallets",
+		no_title: "Decentralized Wallet",
+		have_wallet: "I have a wallet",
+		no_wallet: "No wallet",
+		import_wallet: "Import Wallet",
+		create_wallet: "Create Wallet",
 	},
 	//交易签名
 	tran_sign:{

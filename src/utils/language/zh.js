@@ -9,7 +9,12 @@ export const zhLan = {
 		receive: "收款",
 		resources: "资源",
 		transfer: "转账",
-		wallet_list: "钱包列表"
+		wallet_list: "钱包列表",
+		no_title: "数字资产钱包",
+		have_wallet: "我有钱包",
+		no_wallet: "我没有钱包",
+		import_wallet: "导入钱包",
+		create_wallet: "创建钱包",
 	},
 	//交易签名
 	tran_sign:{

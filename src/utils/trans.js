@@ -173,7 +173,7 @@ export function testaa() {
 
 import { requestV2 } from './config_v2.js'
 const marketApi = 'https://www.worldcoinindex.com/apiservice/v2getmarkets'
-const marketKey = '81fynYZoXSEyZeZTlZ5SsKSOZJ92Ad'
+const marketKey = '9gY9jPfBnt43lfg8BGuWbaRQ2taZP1NCTiY'
 export async function getMarket(chain) {
 	let url = marketApi + "?key="+marketKey+"&fiat="+chain
 	let params = {

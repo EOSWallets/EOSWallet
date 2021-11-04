@@ -83,9 +83,10 @@
 	import { WxcLoading, WxcButton, WxcPopup, WxcMinibar} from 'weex-ui';
 	const modal = weex.requireModule('modal')
 	import {CheckPrivateKeyValid, genPublicKey} from './utils/base_v2'
+	const storage = weex.requireModule('storage')
 	import {encryptKey, genPwdMd5} from './utils/auth_v2'
 	import {AESKey, imgSrc, chainList, getStorage} from './utils/config_v2'
-	import {getAccountByPublicKey, addLocalAccount, getCurrentAccountInfo} from './utils/account_v2'
+	import {getAccountByPublicKey, addLocalAccount, getCurrentAccountInfo, switchAccount} from './utils/account_v2'
 	const animation = weex.requireModule('animation')
 	const navigator = weex.requireModule('navigator')
 	const utils = require('./appUtils')
@@ -107,7 +108,7 @@
 				color: "#ffffff", 
 				isShow: false,
 				showChainSelectPop:false,
-				selectedChainName:'请选择公链',
+				selectedChainName:'',
 				imgSrc: imgSrc,
         		globalLan:globalLan,
 				zhLan:{},
@@ -191,6 +192,7 @@
 
 			this.zhLan = await this.globalLan.lang("private_key_import", lan)
 			this.private_key_create = await this.globalLan.lang("private_key_create", lan)
+			this.selectedChainName = this.zhLan.choose_pubkey
 			this.modal = await this.globalLan.lang("modal", lan)
 		},
 		mounted() {
@@ -366,6 +368,18 @@
 				await addLocalAccount(account, this.selectedChainName).then(()=>{
 					console.log("[0819] 001")
 				})
+
+				let accountM = JSON.parse(await getStorage("Account"));
+				// console.log("[0818] account: ", accountM.account_name)
+				if(!accountM.account_name){
+					let chain = JSON.parse(await getStorage("ChainManager"));
+					chain.CurrentChain = this.selectedChainName;
+					storage.setItem("ChainManager", JSON.stringify(chain))
+
+					console.log("[0818] account: ", res.account_names[0], publicKey, this.selectedChainName)
+					await switchAccount(res.account_names[0], publicKey, this.selectedChainName)
+					
+				}
 				console.log("[0819] 002")
 				this.isShow = false
 				modal.toast({

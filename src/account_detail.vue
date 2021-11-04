@@ -428,6 +428,11 @@ export default {
         accountManager[this.account.chain][pubkeyIndex] = newPubkeyObj;
         await storage.setItem('AccountManager_v2', JSON.stringify(accountManager))
         this.showAccountPop = false;
+        let account = JSON.parse(await getStorage("Account"));
+		console.log("[0818] account: ", account.account_name)
+		if(account.account_name && this.account.account_name == account.account_name){
+			await storage.setItem('Account', JSON.stringify({}))
+		}
 
         modal.toast({
             message: "账号删除成功",

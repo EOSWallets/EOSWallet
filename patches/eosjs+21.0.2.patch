@@ -1,0 +1,407 @@
+diff --git a/node_modules/eosjs/dist/PrivateKey.d.ts b/node_modules/eosjs/dist/PrivateKey.d.ts
+index e033c57..cf2a6a3 100644
+--- a/node_modules/eosjs/dist/PrivateKey.d.ts
++++ b/node_modules/eosjs/dist/PrivateKey.d.ts
+@@ -1,4 +1,3 @@
+-/// <reference types="node" />
+ import { BNInput, ec as EC } from 'elliptic';
+ import { Key, KeyType } from './eosjs-numeric';
+ import { PublicKey, Signature } from './eosjs-key-conversions';
+@@ -21,7 +20,7 @@ export declare class PrivateKey {
+     /** Retrieve the public key from a private key */
+     getPublicKey(): PublicKey;
+     /** Sign a message or hashed message digest with private key */
+-    sign(data: BNInput, shouldHash?: boolean, encoding?: BufferEncoding): Signature;
++    sign(data: BNInput, shouldHash?: boolean, encoding?: string): Signature;
+     /** Validate a private key */
+     isValid(): boolean;
+ }
+diff --git a/node_modules/eosjs/dist/PrivateKey.js b/node_modules/eosjs/dist/PrivateKey.js
+index 85a9087..9b66a37 100644
+--- a/node_modules/eosjs/dist/PrivateKey.js
++++ b/node_modules/eosjs/dist/PrivateKey.js
+@@ -53,10 +53,7 @@ var PrivateKey = /** @class */ (function () {
+         if (shouldHash === void 0) { shouldHash = true; }
+         if (encoding === void 0) { encoding = 'utf8'; }
+         if (shouldHash) {
+-            if (typeof data === 'string') {
+-                data = Buffer.from(data, encoding);
+-            }
+-            data = this.ec.hash().update(data).digest();
++            data = this.ec.hash().update(data, encoding).digest();
+         }
+         var tries = 0;
+         var signature;
+diff --git a/node_modules/eosjs/dist/PrivateKey.js.map b/node_modules/eosjs/dist/PrivateKey.js.map
+index 07b1f5c..44471f1 100644
+--- a/node_modules/eosjs/dist/PrivateKey.js.map
++++ b/node_modules/eosjs/dist/PrivateKey.js.map
+@@ -1 +1 @@
+-{"version":3,"file":"PrivateKey.js","sourceRoot":"","sources":["../src/PrivateKey.ts"],"names":[],"mappings":"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"}
+\ No newline at end of file
++{"version":3,"file":"PrivateKey.js","sourceRoot":"","sources":["../src/PrivateKey.ts"],"names":[],"mappings":"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"}
+\ No newline at end of file
+diff --git a/node_modules/eosjs/dist/Signature.d.ts b/node_modules/eosjs/dist/Signature.d.ts
+index afe7ef7..bdab473 100644
+--- a/node_modules/eosjs/dist/Signature.d.ts
++++ b/node_modules/eosjs/dist/Signature.d.ts
+@@ -1,4 +1,3 @@
+-/// <reference types="node" />
+ import { BNInput, ec as EC } from 'elliptic';
+ import { Key, KeyType } from './eosjs-numeric';
+ import { PublicKey } from './eosjs-key-conversions';
+@@ -25,7 +24,7 @@ export declare class Signature {
+     /** Get key type from signature */
+     getType(): KeyType;
+     /** Verify a signature with a message or hashed message digest and public key */
+-    verify(data: BNInput, publicKey: PublicKey, shouldHash?: boolean, encoding?: BufferEncoding): boolean;
++    verify(data: BNInput, publicKey: PublicKey, shouldHash?: boolean, encoding?: string): boolean;
+     /** Recover a public key from a message or hashed message digest and signature */
+-    recover(data: BNInput, shouldHash?: boolean, encoding?: BufferEncoding): PublicKey;
++    recover(data: BNInput, shouldHash?: boolean, encoding?: string): PublicKey;
+ }
+diff --git a/node_modules/eosjs/dist/Signature.js b/node_modules/eosjs/dist/Signature.js
+index 99577cd..15b511e 100644
+--- a/node_modules/eosjs/dist/Signature.js
++++ b/node_modules/eosjs/dist/Signature.js
+@@ -82,10 +82,7 @@ var Signature = /** @class */ (function () {
+         if (shouldHash === void 0) { shouldHash = true; }
+         if (encoding === void 0) { encoding = 'utf8'; }
+         if (shouldHash) {
+-            if (typeof data === 'string') {
+-                data = Buffer.from(data, encoding);
+-            }
+-            data = this.ec.hash().update(data).digest();
++            data = this.ec.hash().update(data, encoding).digest();
+         }
+         var ellipticSignature = this.toElliptic();
+         var ellipticPublicKey = publicKey.toElliptic();
+@@ -96,10 +93,7 @@ var Signature = /** @class */ (function () {
+         if (shouldHash === void 0) { shouldHash = true; }
+         if (encoding === void 0) { encoding = 'utf8'; }
+         if (shouldHash) {
+-            if (typeof data === 'string') {
+-                data = Buffer.from(data, encoding);
+-            }
+-            data = this.ec.hash().update(data).digest();
++            data = this.ec.hash().update(data, encoding).digest();
+         }
+         var ellipticSignature = this.toElliptic();
+         var recoveredPublicKey = this.ec.recoverPubKey(data, ellipticSignature, ellipticSignature.recoveryParam, encoding);
+diff --git a/node_modules/eosjs/dist/Signature.js.map b/node_modules/eosjs/dist/Signature.js.map
+index d1d42f1..fe7b695 100644
+--- a/node_modules/eosjs/dist/Signature.js.map
++++ b/node_modules/eosjs/dist/Signature.js.map
+@@ -1 +1 @@
+-{"version":3,"file":"Signature.js","sourceRoot":"","sources":["../src/Signature.ts"],"names":[],"mappings":"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"}
+\ No newline at end of file
++{"version":3,"file":"Signature.js","sourceRoot":"","sources":["../src/Signature.ts"],"names":[],"mappings":"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"}
+\ No newline at end of file
+diff --git a/node_modules/eosjs/dist/eosjs-api.js b/node_modules/eosjs/dist/eosjs-api.js
+index 228e330..696799f 100644
+--- a/node_modules/eosjs/dist/eosjs-api.js
++++ b/node_modules/eosjs/dist/eosjs-api.js
+@@ -88,6 +88,7 @@ var pako_1 = require("pako");
+ var ser = require("./eosjs-serialize");
+ var abiAbi = require('../src/abi.abi.json');
+ var transactionAbi = require('../src/transaction.abi.json');
++const { TextEncoder, TextDecoder } = require('text-encoding');
+ var Api = /** @class */ (function () {
+     /**
+      * @param args
+@@ -109,8 +110,8 @@ var Api = /** @class */ (function () {
+         this.abiProvider = args.abiProvider || args.rpc;
+         this.signatureProvider = args.signatureProvider;
+         this.chainId = args.chainId;
+-        this.textEncoder = args.textEncoder;
+-        this.textDecoder = args.textDecoder;
++        this.textEncoder = new TextEncoder();
++        this.textDecoder = new TextDecoder();
+         this.abiTypes = ser.getTypesFromAbi(ser.createInitialTypes(), abiAbi);
+         this.transactionTypes = ser.getTypesFromAbi(ser.createInitialTypes(), transactionAbi);
+     }
+diff --git a/node_modules/eosjs/dist/eosjs-ecc-migration.d.ts b/node_modules/eosjs/dist/eosjs-ecc-migration.d.ts
+index f3fae78..7141254 100644
+--- a/node_modules/eosjs/dist/eosjs-ecc-migration.d.ts
++++ b/node_modules/eosjs/dist/eosjs-ecc-migration.d.ts
+@@ -1,6 +1,7 @@
+ /// <reference types="node" />
+ import { PrivateKey, PublicKey } from './eosjs-jssig';
+ import { ec as EC } from 'elliptic';
++const Buffer = require('buffer/').Buffer
+ export declare const ecc: {
+     initialize: () => void;
+     unsafeRandomKey: () => void;
+@@ -12,10 +13,10 @@ export declare const ecc: {
+     privateToPublic: (key: string, pubkey_prefix?: string) => string;
+     isValidPublic: (pubkey: string, pubkey_prefix?: string) => boolean;
+     isValidPrivate: (wif: string) => boolean;
+-    sign: (data: string | Buffer, privateKey: string | PrivateKey, encoding?: BufferEncoding) => string;
+-    signHash: (dataSha256: string | Buffer, privateKey: string | PrivateKey, encoding?: BufferEncoding) => string;
+-    verify: (signature: string, data: string, pubKey: string | PublicKey, encoding?: BufferEncoding, hashData?: boolean) => boolean;
+-    recover: (signature: string, data: string, encoding?: BufferEncoding) => string;
+-    recoverHash: (signature: string, dataSha256: string | Buffer, encoding?: BufferEncoding) => string;
++    sign: (data: string | Buffer, privateKey: string | PrivateKey, encoding?: string) => string;
++    signHash: (dataSha256: string | Buffer, privateKey: string | PrivateKey, encoding?: string) => string;
++    verify: (signature: string, data: string, pubKey: string | PublicKey, encoding?: string, hashData?: boolean) => boolean;
++    recover: (signature: string, data: string, encoding?: string) => string;
++    recoverHash: (signature: string, dataSha256: string | Buffer, encoding?: string) => string;
+     sha256: (data: string | Buffer, resultEncoding?: string, encoding?: string) => string | Buffer;
+ };
+diff --git a/node_modules/eosjs/dist/eosjs-ecc-migration.js.map b/node_modules/eosjs/dist/eosjs-ecc-migration.js.map
+index 26d6bb8..718adfa 100644
+--- a/node_modules/eosjs/dist/eosjs-ecc-migration.js.map
++++ b/node_modules/eosjs/dist/eosjs-ecc-migration.js.map
+@@ -1 +1 @@
+-{"version":3,"file":"eosjs-ecc-migration.js","sourceRoot":"","sources":["../src/eosjs-ecc-migration.ts"],"names":[],"mappings":"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"}
+\ No newline at end of file
++{"version":3,"file":"eosjs-ecc-migration.js","sourceRoot":"","sources":["../src/eosjs-ecc-migration.ts"],"names":[],"mappings":"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"}
+\ No newline at end of file
+diff --git a/node_modules/eosjs/dist/eosjs-jsonrpc.js b/node_modules/eosjs/dist/eosjs-jsonrpc.js
+index 36ba5d3..7a6d692 100644
+--- a/node_modules/eosjs/dist/eosjs-jsonrpc.js
++++ b/node_modules/eosjs/dist/eosjs-jsonrpc.js
+@@ -72,6 +72,8 @@ var arrayToHex = function (data) {
+     }
+     return result;
+ };
++
++const stream = weex.requireModule("stream")
+ /** Make RPC calls */
+ var JsonRpc = /** @class */ (function () {
+     /**
+@@ -81,14 +83,10 @@ var JsonRpc = /** @class */ (function () {
+      * node: provide an implementation
+      */
+     function JsonRpc(endpoint, args) {
++        console.log(args)
+         if (args === void 0) { args = {}; }
+         this.endpoint = endpoint.replace(/\/$/, '');
+-        if (args.fetch) {
+-            this.fetchBuiltin = args.fetch;
+-        }
+-        else {
+-            this.fetchBuiltin = global.fetch;
+-        }
++        this.fetchBuiltin = stream.fetch;
+     }
+     /** Post `body` to `endpoint + path`. Throws detailed error information in `RpcError` when available. */
+     JsonRpc.prototype.fetch = function (path, body) {
+@@ -99,27 +97,47 @@ var JsonRpc = /** @class */ (function () {
+                     case 0:
+                         _a.trys.push([0, 3, , 4]);
+                         f = this.fetchBuiltin;
+-                        return [4 /*yield*/, f(this.endpoint + path, {
+-                                body: JSON.stringify(body),
+-                                method: 'POST',
+-                            })];
++                        return [4 /*yield*/, new Promise((resolve, reject) => {
++                            console.log("当前网址："+this.endpoint + path)
++                            stream.fetch({
++                              method: 'post',
++                              url: this.endpoint + path,
++                              headers: {
++                                'Content-Type': 'application/json;charset=UTF-8',
++                                 Accept: 'application/json, text/plain, */*',
++                                 Authorization: 'token',
++                              },
++                              body: JSON.stringify(body),
++                              type: 'json',
++                            }, (res) => {
++                                console.log(res)
++                               if (res.ok) {
++                                    resolve(res.data);
++                               } else {
++                                    resolve(false)
++                               }
++                           }, () => {
++                                // complete
++                             });
++                          })];
+                     case 1:
+                         response = _a.sent();
+-                        return [4 /*yield*/, response.json()];
++                        return [4 /*yield*/, response];
+                     case 2:
+                         json = _a.sent();
+-                        if (json.processed && json.processed.except) {
+-                            throw new eosjs_rpcerror_1.RpcError(json);
+-                        }
++                        // if (json.processed && json.processed.except) {
++                        //     console.log("步骤2出错")
++                        //     throw new eosjs_rpcerror_1.RpcError(json);
++                        // }
+                         return [3 /*break*/, 4];
+                     case 3:
+                         e_2 = _a.sent();
+                         e_2.isFetchError = true;
+                         throw e_2;
+                     case 4:
+-                        if (!response.ok) {
+-                            throw new eosjs_rpcerror_1.RpcError(json);
+-                        }
++                        // if (!response.ok) {
++                        //     throw new eosjs_rpcerror_1.RpcError(json);
++                        // }
+                         return [2 /*return*/, json];
+                 }
+             });
+@@ -333,18 +351,26 @@ var JsonRpc = /** @class */ (function () {
+                 switch (_b.label) {
+                     case 0:
+                         _a = eosjs_numeric_1.convertLegacyPublicKeys;
++                        console.log("args.transaction：")
++                        console.log(args.transaction)
+                         return [4 /*yield*/, this.fetch('/v1/chain/get_required_keys', {
+                                 transaction: args.transaction,
+                                 available_keys: args.availableKeys,
+                             })];
+-                    case 1: return [2 /*return*/, _a.apply(void 0, [(_b.sent()).required_keys])];
++                    case 1: 
++                    console.log("好无语") 
++
++                    return [2 /*return*/, _a.apply(void 0, [(_b.sent()).required_keys])];
+                 }
+             });
+         });
+     };
+     /** Push a serialized transaction (replaced by send_transaction, but returned format has changed) */
+     JsonRpc.prototype.push_transaction = function (_a) {
++        console.log("进入push_transaction")
+         var signatures = _a.signatures, _b = _a.compression, compression = _b === void 0 ? 0 : _b, serializedTransaction = _a.serializedTransaction, serializedContextFreeData = _a.serializedContextFreeData;
++        console.log("获取到signnatures")
++        console.log(signatures)
+         return __awaiter(this, void 0, void 0, function () {
+             return __generator(this, function (_c) {
+                 switch (_c.label) {
+diff --git a/node_modules/eosjs/dist/eosjs-jssig.js b/node_modules/eosjs/dist/eosjs-jssig.js
+index d6aa8f9..2a9472e 100644
+--- a/node_modules/eosjs/dist/eosjs-jssig.js
++++ b/node_modules/eosjs/dist/eosjs-jssig.js
+@@ -61,6 +61,9 @@ var eosjs_numeric_1 = require("./eosjs-numeric");
+ /** expensive to construct; so we do it once and reuse it */
+ var defaultEc = new elliptic_1.ec('secp256k1');
+ /** Construct the digest from transaction details */
++const Buffer = require('buffer/').Buffer
++console.log("获取到Buffer")
++console.log(Buffer)
+ var digestFromSerializedData = function (chainId, serializedTransaction, serializedContextFreeData, e) {
+     if (e === void 0) { e = defaultEc; }
+     var signBuf = Buffer.concat([
+diff --git a/node_modules/eosjs/dist/eosjs-numeric.js b/node_modules/eosjs/dist/eosjs-numeric.js
+index ab9af3b..35626bd 100644
+--- a/node_modules/eosjs/dist/eosjs-numeric.js
++++ b/node_modules/eosjs/dist/eosjs-numeric.js
+@@ -330,12 +330,18 @@ var digestSuffixRipemd160 = function (data, suffix) {
+ };
+ var stringToKey = function (s, type, size, suffix) {
+     var whole = exports.base58ToBinary(size ? size + 4 : 0, s);
++    console.log("whole为："+whole)
+     var result = { type: type, data: new Uint8Array(whole.buffer, 0, whole.length - 4) };
++    console.log("result为：")
++    console.log(result)
+     var digest = new Uint8Array(digestSuffixRipemd160(result.data, suffix));
++    console.log("digest为")
++    console.log(digest)
+     if (digest[0] !== whole[whole.length - 4] || digest[1] !== whole[whole.length - 3]
+         || digest[2] !== whole[whole.length - 2] || digest[3] !== whole[whole.length - 1]) {
+         throw new Error('checksum doesn\'t match');
+     }
++    console.log("返回1")
+     return result;
+ };
+ var keyToString = function (key, suffix, prefix) {
+@@ -347,6 +353,9 @@ var keyToString = function (key, suffix, prefix) {
+     for (var i = 0; i < 4; ++i) {
+         whole[i + key.data.length] = digest[i];
+     }
++    console.log("pub1")
++    console.log(prefix + exports.binaryToBase58(whole))
++    console.log("pub2")
+     return prefix + exports.binaryToBase58(whole);
+ };
+ /** Convert key in `s` to binary form */
+@@ -355,6 +364,7 @@ exports.stringToPublicKey = function (s) {
+         throw new Error('expected string containing public key');
+     }
+     if (s.substr(0, 3) === 'EOS') {
++        console.log("stringToPublic五五")
+         var whole = exports.base58ToBinary(exports.publicKeyDataSize + 4, s.substr(3));
+         var key = { type: KeyType.k1, data: new Uint8Array(exports.publicKeyDataSize) };
+         for (var i = 0; i < exports.publicKeyDataSize; ++i) {
+@@ -365,9 +375,11 @@ exports.stringToPublicKey = function (s) {
+             || digest[2] !== whole[35] || digest[3] !== whole[36]) {
+             throw new Error('checksum doesn\'t match');
+         }
++        console.log(key)
+         return key;
+     }
+     else if (s.substr(0, 7) === 'PUB_K1_') {
++        console.log("stringToPublic66")
+         return stringToKey(s.substr(7), KeyType.k1, exports.publicKeyDataSize, 'K1');
+     }
+     else if (s.substr(0, 7) === 'PUB_R1_') {
+@@ -394,10 +406,13 @@ exports.publicKeyToLegacyString = function (key) {
+ };
+ /** Convert `key` to string (base-58) form */
+ exports.publicKeyToString = function (key) {
++    console.log("该公钥为："+key)
+     if (key.type === KeyType.k1 && key.data.length === exports.publicKeyDataSize) {
++        console.log("1111111")
+         return keyToString(key, 'K1', 'PUB_K1_');
+     }
+     else if (key.type === KeyType.r1 && key.data.length === exports.publicKeyDataSize) {
++        console.log("22222222222")
+         return keyToString(key, 'R1', 'PUB_R1_');
+     }
+     else if (key.type === KeyType.wa) {
+@@ -412,6 +427,7 @@ exports.publicKeyToString = function (key) {
+  */
+ exports.convertLegacyPublicKey = function (s) {
+     if (s.substr(0, 3) === 'EOS') {
++        console.log("s: "+s)
+         return exports.publicKeyToString(exports.stringToPublicKey(s));
+     }
+     return s;
+@@ -420,6 +436,8 @@ exports.convertLegacyPublicKey = function (s) {
+  * Leaves other formats untouched
+  */
+ exports.convertLegacyPublicKeys = function (keys) {
++    console.log("钥匙为：")
++    console.log(keys)
+     return keys.map(exports.convertLegacyPublicKey);
+ };
+ /** Convert key in `s` to binary form */
+@@ -503,6 +521,8 @@ exports.stringToSignature = function (s) {
+ };
+ /** Convert `signature` to string (base-58) form */
+ exports.signatureToString = function (signature) {
++    console.log("开始获取signaturetoString")
++    console.log(signature)
+     if (signature.type === KeyType.k1) {
+         return keyToString(signature, 'K1', 'SIG_K1_');
+     }
+diff --git a/node_modules/eosjs/dist/eosjs-serialize.js b/node_modules/eosjs/dist/eosjs-serialize.js
+index 76bcda7..6d9a2b2 100644
+--- a/node_modules/eosjs/dist/eosjs-serialize.js
++++ b/node_modules/eosjs/dist/eosjs-serialize.js
+@@ -455,6 +455,7 @@ var SerialBuffer = /** @class */ (function () {
+     };
+     /** Get a signature */
+     SerialBuffer.prototype.getSignature = function () {
++        console.log("在serialBuffer中获取signature1")
+         var type = this.get();
+         var data;
+         if (type === numeric.KeyType.wa) {
+@@ -463,9 +464,11 @@ var SerialBuffer = /** @class */ (function () {
+             this.skip(this.getVaruint32());
+             this.skip(this.getVaruint32());
+             data = new Uint8Array(this.array.buffer, this.array.byteOffset + begin, this.readPos - begin);
++            console.log("在serialBuffer中获取signature2")
+         }
+         else {
+             data = this.getUint8Array(numeric.signatureDataSize);
++            console.log("在serialBuffer中获取signatur3")
+         }
+         return numeric.signatureToString({ type: type, data: data });
+     };
