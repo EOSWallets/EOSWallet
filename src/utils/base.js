@@ -7,7 +7,8 @@ const ecc = require('eosjs/dist/eosjs-ecc-migration').ecc
 const { JsSignatureProvider } = require('eosjs/dist/eosjs-jssig');
 const privateKeys = ['5KVQ9WhxWeuF3KsysLgYfjiwYskJsUvvuGv1BNEA6ygJQqQyv6r'];
 const signatureProvider = new JsSignatureProvider(privateKeys);
-const rpc = new JsonRpc('https://yas.maiziqianbao.net');
+// const rpc = new JsonRpc('https://yas.maiziqianbao.net');
+const rpc = new JsonRpc('http://openapi.eos.ren');
 export const api = new Api({ rpc, signatureProvider })
 
 
@@ -18,7 +19,14 @@ const nodeConfigs = {
     port: 443,
     protocol: "https",
     chainId: "ed8636abfe625d99fc9a759d49a016fd8dcae9193676a020aae2540c9fffe32f"
-  }
+  },
+  eosapi: {
+    host: "http://openapi.eos.ren",
+    port: 80,
+    protocol: "http",
+    chainId: "aca376f206b8fc25a6ed44dbdc66547c36c6c33e3a119ffbeaef943642f0e906"
+  },
+
 }
 const config = nodeConfigs.math
 // let EosApi = require('eosjs-api')

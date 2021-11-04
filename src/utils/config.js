@@ -70,14 +70,17 @@ export const ContractAccounts2 = {
     "YAS": "eosio",
 }
 const stream = weex.requireModule('stream');
-export const rpc = new JsonRpc('https://yas.maiziqianbao.net');
-export const abiBinToJsonUrl = "https://yas.maiziqianbao.net/v1/chain/abi_bin_to_json"
+export const rpc = new JsonRpc('http://openapi.eos.ren');
+export const abiBinToJsonUrl = "http://openapi.eos.ren/v1/chain/abi_bin_to_json"
+// export const rpc = new JsonRpc('https://yas.maiziqianbao.net');
+// export const abiBinToJsonUrl = "https://yas.maiziqianbao.net/v1/chain/abi_bin_to_json"
 export const AESKey = "8S2JThYld1FUJvYixqfls63cLHK2Kxm6"
 
 export const cpuPrice = 0.0004
 export const netPrice = 0.0002
 
-const basicUrl = 'https://yas.maiziqianbao.net/v1/'
+// const basicUrl = 'https://yas.maiziqianbao.net/v1/'
+const basicUrl = 'http://openapi.eos.ren/v1/'
 
 export function request(method, url, params) {
     return new Promise((resolve, reject) => {

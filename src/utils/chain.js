@@ -6,35 +6,35 @@ export async function initChain(){
         storage.getItem("ChainManager", async res =>{
             if(res.result == "failed"){
                 let ChainManager = {
-                    CurrentChain: "YAS", //当前所在链
-                    YAS: {
-                       ChainName: "YAS",
-                       chainId: "ed8636abfe625d99fc9a759d49a016fd8dcae9193676a020aae2540c9fffe32f",
-                       ContractAccount: "eosio",
-                       CurrentNode:"https://yas.maiziqianbao.net",
-                       Nodes: [
-                        {
-                            Name: 'Math',
-                            Url: 'https://yas.maiziqianbao.net'
-                        },
-                        {
-                            Name: 'Yas Plus',
-                            Url: 'https://rpc.yas.plus.com'
-                        }
-                       ]
-                    },
-                    TNT: {
-                       ChainName: "TNT",
-                       chainId: "cf057bbfb72640471fd910bcb67639c22df9f92470936cddc1ade0e2f2e7dc4f",
-                       ContractAccount: "eosio",
-                       CurrentNode:"https://api.testnet.eos.io",
-                       Nodes: [
-                        {
-                            Name: 'Testnet',
-                            Url: 'https://rpc.yas.plus.com'
-                        }
-                       ]
-                    },                
+                    CurrentChain: "EOS", //当前所在链
+                //     YAS: {
+                //        ChainName: "YAS",
+                //        chainId: "ed8636abfe625d99fc9a759d49a016fd8dcae9193676a020aae2540c9fffe32f",
+                //        ContractAccount: "eosio",
+                //        CurrentNode:"https://yas.maiziqianbao.net",
+                //        Nodes: [
+                //         {
+                //             Name: 'Math',
+                //             Url: 'https://yas.maiziqianbao.net'
+                //         },
+                //         {
+                //             Name: 'Yas Plus',
+                //             Url: 'https://rpc.yas.plus.com'
+                //         }
+                //        ]
+                //     },
+                //     TNT: {
+                //        ChainName: "TNT",
+                //        chainId: "cf057bbfb72640471fd910bcb67639c22df9f92470936cddc1ade0e2f2e7dc4f",
+                //        ContractAccount: "eosio",
+                //        CurrentNode:"https://api.testnet.eos.io",
+                //        Nodes: [
+                //         {
+                //             Name: 'Testnet',
+                //             Url: 'https://rpc.yas.plus.com'
+                //         }
+                //        ]
+                //     },                
                     EOS: {
                        ChainName: "EOS",
                        chainId: "aca376f206b8fc25a6ed44dbdc66547c36c6c33e3a119ffbeaef943642f0e906",

@@ -304,14 +304,15 @@ export default {
 		unclickIcon:["tnt","yas","eos"],
 		clickIcon:["tnt","yas","eos"],
 		chainList:[
-			"TNT","YAS","EOS"
+			"EOS"
+			// "TNT","YAS","EOS"
 		],
         imgSrc: imgSrc,
         bodyH: '',
         bodyStyle: {
             height:'760px'
         },
-        currentWallet:"TNT",
+        currentWallet:"EOS",
         chooseIndex:"0",
         accountList:[],
         showPop:false,

@@ -128,7 +128,8 @@ function getChainManager(){
 }
 
 //暂且固定，不随公联变动
-export const abiBinToJsonUrl = "https://yas.maiziqianbao.net/v1/chain/abi_bin_to_json"
+// export const abiBinToJsonUrl = "https://yas.maiziqianbao.net/v1/chain/abi_bin_to_json"
+export const abiBinToJsonUrl = "http://openapi.eos.ren/v1/chain/abi_bin_to_json"
 export const AESKey = "8S2JThYld1FUJvYixqfls63cLHK2Kxm6"
 
 export const cpuPrice = 0.0004

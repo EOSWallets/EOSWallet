@@ -51,6 +51,8 @@
           </div>
       </div>
 
+      
+
       <div class="cat-box">
           <wxc-tab-page
           :tab-titles="tabTitles"
@@ -444,7 +446,184 @@ export default {
             img_src: "https://www.helloimg.com/images/2021/11/01/CV1EJm.jpg"
           }
         ]
-        
+        this.tabList = [
+      [
+        {
+          img_src: "https://www.helloimg.com/images/2021/11/01/CV1BuX.png",
+          dapp_name_eng:"bloks",
+          dapp_name_chn:"bloks",
+          infos_eng:"bloks",
+          infos_chn:"bloks",
+          url:"https://bloks.io/"
+        },
+        {
+          url:"https://pizza.finance/",
+          img_src: "https://www.helloimg.com/images/2021/11/01/CV1F16.jpg",
+          dapp_name_eng:"PIZZA",
+          dapp_name_chn:"PIZZA",
+          infos_eng:"PIZZA",
+          infos_chn:"PIZZA"
+        },
+        {
+          url:"https://www.ogx.network/dapp",
+          img_src: "https://www.helloimg.com/images/2021/11/01/CV1ZrP.png",
+          dapp_name_eng:"Oranix",
+          dapp_name_chn:"Oranix",
+          infos_eng:"Oranix",
+          infos_chn:"Oranix"
+        },
+      ],
+      [
+        {
+            url:"http://dapp.defibox.io",
+            img_src: "https://www.helloimg.com/images/2021/11/01/CV1ROM.jpg",
+          dapp_name_eng:"Defibox",
+          dapp_name_chn:"Defibox",
+          infos_eng:"Defibox",
+          infos_chn:"Defibox"
+        },
+        {
+            url:"https://newdex.io/",
+            img_src: "https://www.helloimg.com/images/2021/11/01/CV1Pln.jpg",
+          dapp_name_eng:"Newdex",
+          dapp_name_chn:"Newdex",
+          infos_eng:"Newdex",
+          infos_chn:"Newdex"
+        },
+        {
+            url:"https://www.whaleex.com/",
+            img_src: "https://www.helloimg.com/images/2021/11/01/CV1a6R.jpg",
+          dapp_name_eng:"WhaleEx",
+          dapp_name_chn:"WhaleEx",
+          infos_eng:"WhaleEx",
+          infos_chn:"WhaleEx"
+        },
+      ],
+      [
+        {
+            url:"https://defis.network/",
+            img_src: "https://www.helloimg.com/images/2021/11/01/CV13Rz.png",
+          dapp_name_eng:"DFS Network",
+          dapp_name_chn:"DFS Network",
+          infos_eng:"DFS Network",
+          infos_chn:"DFS Network"
+        },
+        {
+            url:"https://sportbet.one/",
+            img_src: "https://www.helloimg.com/images/2021/11/01/CV1XLA.jpg",
+          dapp_name_eng:"SportBet",
+          dapp_name_chn:"SportBet",
+          infos_eng:"SportBet",
+          infos_chn:"SportBet"
+        },
+        {
+            url:"https://blockchaincuties.com/",
+            img_src: "https://www.helloimg.com/images/2021/11/01/CV1eQ5.jpg",
+          dapp_name_eng:"Blockchain Cuties",
+          dapp_name_chn:"Blockchain Cuties",
+          infos_eng:"Blockchain Cuties",
+          infos_chn:"Blockchain Cuties"
+        },
+      ],
+      [
+        {
+            url:"http://dapp.defibox.io",
+            img_src: "https://www.helloimg.com/images/2021/11/01/CV1ROM.jpg",
+          dapp_name_eng:"Defibox",
+          dapp_name_chn:"Defibox",
+          infos_eng:"Defibox",
+          infos_chn:"Defibox"
+        },
+        {
+            url:"https://newdex.io/",
+            img_src: "https://www.helloimg.com/images/2021/11/01/CV1Pln.jpg",
+          dapp_name_eng:"Newdex",
+          dapp_name_chn:"Newdex",
+          infos_eng:"Newdex",
+          infos_chn:"Newdex"
+        },
+        {
+          url:"https://www.ogx.network/dapp",
+          img_src: "https://www.helloimg.com/images/2021/11/01/CV1ZrP.png",
+          dapp_name_eng:"Oranix",
+          dapp_name_chn:"Oranix",
+          infos_eng:"Oranix",
+          infos_chn:"Oranix"
+        },
+      ], 
+      [
+        {
+            url:"http://bethash.net/?ref=eosbetadmin1",
+            img_src: "https://www.helloimg.com/images/2021/11/01/CV1EJm.jpg",
+          dapp_name_eng:"BetHash",
+          dapp_name_chn:"BetHash",
+          infos_eng:"BetHash",
+          infos_chn:"BetHash"
+        },
+        {
+            url:"https://defis.network/",
+            img_src: "https://www.helloimg.com/images/2021/11/01/CV13Rz.png",
+          dapp_name_eng:"DFS Network",
+          dapp_name_chn:"DFS Network",
+          infos_eng:"DFS Network",
+          infos_chn:"DFS Network"
+        },
+        {
+            url:"https://blockchaincuties.com/",
+            img_src: "https://www.helloimg.com/images/2021/11/01/CV1eQ5.jpg",
+          dapp_name_eng:"Blockchain Cuties",
+          dapp_name_chn:"Blockchain Cuties",
+          infos_eng:"Blockchain Cuties",
+          infos_chn:"Blockchain Cuties"
+        },
+      ],
+      [
+        {
+          url:"https://pizza.finance/",
+          img_src: "https://www.helloimg.com/images/2021/11/01/CV1F16.jpg",
+          dapp_name_eng:"PIZZA",
+          dapp_name_chn:"PIZZA",
+          infos_eng:"PIZZA",
+          infos_chn:"PIZZA"
+        },
+        {
+          img_src: "https://www.helloimg.com/images/2021/11/01/CV1BuX.png",
+          dapp_name_eng:"bloks",
+          dapp_name_chn:"bloks",
+          infos_eng:"bloks",
+          infos_chn:"bloks",
+          url:"https://bloks.io/"
+        },
+        {
+            url:"https://sportbet.one/",
+            img_src: "https://www.helloimg.com/images/2021/11/01/CV1XLA.jpg",
+          dapp_name_eng:"SportBet",
+          dapp_name_chn:"SportBet",
+          infos_eng:"SportBet",
+          infos_chn:"SportBet"
+        },
+      ]
+    ]
+      this.tabTitles = [
+        {
+          title:"Hot"
+        },
+        {
+          title:"Defi"
+        },
+        {
+          title:"Wallet"
+        },
+        {
+          title:"Games"
+        },
+        {
+          title:"NFT"
+        },
+        {
+          title:"News"
+        },
+      ]
 
     },
   async created() {
@@ -474,7 +653,6 @@ export default {
       this.tabTitles = this.allDapps.zh_titles
     }
     this.tabList = this.allDapps.apps
-
 
     this.getRecoDapps()
     this.getAllDapps()
@@ -566,6 +744,16 @@ export default {
         // this.$router.push({path:'/dapp_search'})
     },
     async goDapp(item) {
+      
+				let account = JSON.parse(await getStorage("Account"));        
+        if(account.length < 10 || account == false){
+				  modal.toast({
+				  	message: "请先导入钱包",
+				  	duration: 2
+				  })
+          return
+        }
+
         let form = {
             enName: item.dapp_name_eng,
             chName: item.dapp_name_chn,
@@ -624,6 +812,16 @@ export default {
         this.listHeight = this.tabList[index].length*180 + 100
     },
     async wxcPanItemPan (item) {
+      
+				let account = JSON.parse(await getStorage("Account"));        
+        if(account.length < 10 || account == false){
+				  modal.toast({
+				  	message: "请先导入钱包",
+				  	duration: 2
+				  })
+          return
+        }
+
         let form = {
             enName: item.dapp_name_eng,
             chName: item.dapp_name_chn,
@@ -736,12 +934,12 @@ export default {
         });
       },
       async getAllDapps() {
-      console.log("开始获取全部版本号")
-      let update = await this.getCurrentVersion("all")
-      console.log("获取到全部版本号结果"+update)
-      if(!update) {
-        return
-      }
+        console.log("开始获取全部版本号")
+        let update = await this.getCurrentVersion("all")
+        console.log("获取到全部版本号结果"+update)
+        if(!update) {
+          return
+        }
         console.log("开始获取全部")
         let chainManager = JSON.parse(await getStorage('ChainManager'))
         let chainName = chainManager.CurrentChain
@@ -757,7 +955,7 @@ export default {
             //     message: '网络错误',
             //     duration: 3
             // });
-                    console.log("网络错误")
+            console.log("网络错误")
             }else{
                let datas = ret.data.data
                console.log("获取到Dapp列表1")

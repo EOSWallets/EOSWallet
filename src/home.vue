@@ -23,7 +23,7 @@
 						
 					</div>
 					<div  class="no-data-box"  @click="jump('create_account.js')">
-						<div  class="no-data-image"><image :src="`${imgSrc}noa`" style="height: 50px;width: 50px"></image></image></div>
+						<div  class="no-data-image"><image :src="`${imgSrc}noa`" style="height: 50px;width: 50px"></image></div>
 						<div  class="no-datas">
 							<div class="no-data-item">
 								<div style="margin-bottom: 8px;"><text class="big">{{zhLan.no_wallet}}</text></div>
